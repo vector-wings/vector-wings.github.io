@@ -8,12 +8,12 @@
   
   
   
-  <title>Hello World | vector wings的小天地</title>
+  <title>CentOS安装Node.js | vector wings的小天地</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="随笔,记录,生活,">
+    <meta name="keywords" content="运维,CentOS,Linux,Node.js,">
   
 
   <script>
@@ -205,30 +205,30 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>Hello World</span>
+    <span>CentOS安装Node.js</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-02-12
+      2019-02-13
     </span>
     
       <span>
         分类 : 
-          <a href="/categories/随笔/">
-            随笔
+          <a href="/categories/运维/">
+            运维
           </a>
       </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="hello-world"></span>
+        浏览 : <span class="article-timer" data-identity="CentOS安装Node-js"></span>
       </span>
     
   </div>
 
   
-    <div id="hello-world" style="margin: 4rem 2px"></div>
+    <div id="CentOS安装Node-js" style="margin: 4rem 2px"></div>
 <script async>
   (function(){
     let playerTimer = setInterval(function(){
@@ -237,10 +237,10 @@
       }
 
       new APlayer({
-        container: document.getElementById('hello-world'),
+        container: document.getElementById('CentOS安装Node-js'),
         theme: '#e96900',
         listFolded: false,
-        audio: [{"name":"Where are you","artist":"AniFace","url":"//music.163.com/song/media/outer/url?id=453843751.mp3","cover":"//p1.music.126.net/AUfXMljLBgB3PBV731IzRg==/109951162857118370.jpg?param=130y130"}]
+        audio: [{"name":"云烟成雨","artist":"周玥","url":"https://m10.music.126.net/20190213190748/09bf81d4e5e462ca0080c31bccbab032/ymusic/be85/d7bc/bfd1/7f2666bb9ce5f41d7f2a0a4ccda53887.mp3","cover":"https://p1.music.126.net/-biDiv_JRl1Of8pBQSwVSw==/109951163167429196.jpg?param=130y130"}]
       });
       
       clearInterval(playerTimer)
@@ -251,16 +251,25 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<p></p>
+      <h3 id="一、下载node-js安装包"><a href="#一、下载node-js安装包" class="headerlink" title="一、下载node.js安装包"></a>一、下载node.js安装包</h3><pre><code>下载地址: http://nodejs.cn/download/
+根据自己服务器Linux系统版本,选择64位或者32位安装包.
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+例如我下载的安装包为: node-v10.5.0-linux-x64.tar.xz
+</code></pre><h3 id="二、上传安装包到服务器"><a href="#二、上传安装包到服务器" class="headerlink" title="二、上传安装包到服务器"></a>二、上传安装包到服务器</h3><pre><code>使用rz命令上传(rz具体使用[参考CentOS安装JDK.md])
+</code></pre><h3 id="三、解压安装包"><a href="#三、解压安装包" class="headerlink" title="三、解压安装包"></a>三、解压安装包</h3><pre><code>安装包为.tar.xz结尾,需要二次解压.
+第一步: xz -d node-v10.5.0-linux-x64.tar.xz
+第二步: tar xvf node-v10.5.0-linux-x64.tar
+</code></pre><h3 id="四、导出node-js命令-全局配置"><a href="#四、导出node-js命令-全局配置" class="headerlink" title="四、导出node.js命令[全局配置]"></a>四、导出node.js命令[全局配置]</h3><pre><code>编辑[profile]
+命令: vi /etc/profile
+
+配置node.js命令[注意: 路径要写成自己node.js的路径]
+# node.js
+export NODE_HOME=/home/sdk/node-v10.5.0-linux-x64
+export PATH=${NODE_HOME}/bin:$PATH 
+
+编辑完成后,使用[source profile]使profile文件生效.
+</code></pre><h3 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h3><pre><code>在终端输入[node-v],若可打印出node的版本信息,表示安装和配置已经成功.
+</code></pre>
     </div>
   </div>
   
@@ -271,7 +280,7 @@
         
           本文作者 : vector wings <br>
         
-        原文链接 : <a href="">http://vectorwings.top/passages/hello-world/</a><br>
+        原文链接 : <a href="">http://vectorwings.top/passages/CentOS安装Node-js/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -331,14 +340,20 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/记录/">
-              #记录
+            <a href="/tags/CentOS/">
+              #CentOS
             </a>
           </span>
           
           <span class="span--tag">
-            <a href="/tags/生活/">
-              #生活
+            <a href="/tags/Linux/">
+              #Linux
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/Node-js/">
+              #Node.js
             </a>
           </span>
           
@@ -360,12 +375,12 @@
 
   <nav class="post-navigation">
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/CentOS安装Node-js/" target="_self">CentOS安装Node.js</a>
-        <i class="iconfont icon-next"></i>
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/hello-world/" target="_self">Hello World</a>
       </div>
+    
     
   </nav>
 
