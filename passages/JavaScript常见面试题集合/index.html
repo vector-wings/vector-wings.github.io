@@ -8,12 +8,12 @@
   
   
   
-  <title>vector wings的小天地</title>
+  <title>JavaScript常见面试题集合 | vector wings的小天地</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw">
+    <meta name="keywords" content="JavaScript,面试,JavaScript,">
   
 
   <script>
@@ -191,41 +191,44 @@
 </script>
 
       
-<div class="container home-index">
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/passages/JavaScript常见面试题集合/">
-        <span>JavaScript常见面试题集合</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
+
+<div class="post">
+  <h1 class="article-title">
+    <span>JavaScript常见面试题集合</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2019-02-15
+    </span>
+    
       <span>
-        发布时间 : 2019-02-15
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-02-15
-      </span>
-      
-        <span>
-        分类 :
+        分类 : 
           <a href="/categories/JavaScript/">
             JavaScript
           </a>
-        </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="JavaScript常见面试题集合"></span>
-        </span>
-      
-    </div>
+      </span>
     
-      <div id="JavaScript常见面试题集合" style="margin: 4rem 2px -1rem"></div>
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="JavaScript常见面试题集合"></span>
+      </span>
+    
+  </div>
+
+  
+    <div id="JavaScript常见面试题集合" style="margin: 4rem 2px"></div>
 <script async>
   (function(){
     let playerTimer = setInterval(function(){
@@ -244,266 +247,146 @@
     }, 10);
   })()
 </script>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <blockquote>
-<p>收集了一些常见的JavaScript面试题</p>
-</blockquote>
-<p>这些面试题，非常常见，但是涉及到的知识点却十分重要！！！<br>
-      </p></div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-            <i class="iconfont icon-tag"></i>分类:
-            <a href="/categories/JavaScript/">
-              JavaScript
-            </a>
-          </span>
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/面试/">
-                  #面试
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/JavaScript/">
-                  #JavaScript
-                </a>
-              </span>
-            
-                    
-        </span>
-      </div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="JavaScript常见面试题集合"></span>
-          </span>
-        </div>
-      
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p></p>
+<h4 id="1、JavaScript-中使用-typeof-会得到哪些类型？"><a href="#1、JavaScript-中使用-typeof-会得到哪些类型？" class="headerlink" title="1、JavaScript 中使用 typeof 会得到哪些类型？"></a>1、JavaScript 中使用 typeof 会得到哪些类型？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在使用 typeof 进行类型获取的时候，会获取到7种类型</span><br><span class="line">undefined, boolean, number, string, object, function, symbol</span><br></pre></td></tr></table></figure>
+<p>JavaScrip 共有7种数据类型，分别是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">5种基本数据类型</span><br><span class="line">null, undefined, boolean, number, string, </span><br><span class="line"></span><br><span class="line">1种复杂数据类型，array 和 function 隶属于 object </span><br><span class="line">object,</span><br><span class="line"></span><br><span class="line">1种 ES6 新加的特殊数据类型</span><br><span class="line">symbol</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="2、-和-分别在什么时候使用？"><a href="#2、-和-分别在什么时候使用？" class="headerlink" title="2、=== 和 == 分别在什么时候使用？"></a>2、=== 和 == 分别在什么时候使用？</h4><p>除过下面👇的情况外，其余都用 ===<br><img src="/images/js中什么时候用三等和双等.png" alt="双等和三等的使用"></p>
+<hr>
+<h4 id="3、JavaScript-中有哪些内置函数？"><a href="#3、JavaScript-中有哪些内置函数？" class="headerlink" title="3、JavaScript 中有哪些内置函数？"></a>3、JavaScript 中有哪些内置函数？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object, Array, Boolean, Number, String, Function, Date, RegExp, Error,</span><br></pre></td></tr></table></figure>
     </div>
   </div>
   
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/passages/CentOS安装Node-js/">
-        <span>CentOS安装Node.js</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-02-13
-      </span>
+    <div class="copy-right">
+      <div class="markdown-body">
+        <blockquote>
+        
+        
+          本文作者 : vector wings <br>
+        
+        原文链接 : <a href="">http://vectorwings.top/passages/JavaScript常见面试题集合/</a><br>
+        版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+        </blockquote>
+      </div>
     </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-02-13
-      </span>
-      
-        <span>
-        分类 :
-          <a href="/categories/运维/">
-            运维
-          </a>
-        </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="CentOS安装Node-js"></span>
-        </span>
-      
-    </div>
-    
-      <div id="CentOS安装Node-js" style="margin: 4rem 2px -1rem"></div>
-<script async>
-  (function(){
-    let playerTimer = setInterval(function(){
-      if(!window.APlayer){
-        return
-      }
+  
+  
+  
+    <div class="social-share" style="margin-top: -2rem" data-wechat-qrcode-title="<p>微信扫一扫</p>" data-wechat-qrcode-helper="<p>微信右上角, 扫一扫分享</p>" data-sites="qzone, qq, weibo, wechat, douban, google, facebook, twitter">
+  <span style="color: #6b7487; font-size: 1.4rem;">分享到: </span>
+</div>
+<script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js" async></script>
+  
 
-      new APlayer({
-        container: document.getElementById('CentOS安装Node-js'),
-        theme: '#e96900',
-        listFolded: false,
-        audio: [{"name":"云烟成雨","artist":"房东的猫","url":"//music.163.com/song/media/outer/url?id=513360721.mp3","cover":"//p1.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg?param=130y130"}]
-      });
-      
-      clearInterval(playerTimer)
-    }, 10);
+  
+    <div id="reward">
+  
+    <p id="reward-meta">知识 & 情怀 | 二者兼得</p>
+  
+  <button id="reward-btn">
+    
+    <span>投食</span>
+  </button>
+  <div id="reward-qrcode">
+    
+      <div class="reward-qrcode--container">
+        <img class="qrcode-img" src="/images/wechat.png" alt="微信扫一扫, 向我投食">
+        <p class="qrcode-meta">微信扫一扫, 向我投食</p>
+      </div>
+    
+      <div class="reward-qrcode--container">
+        <img class="qrcode-img" src="/images/alipay.png" alt="支付宝扫一扫, 向我投食">
+        <p class="qrcode-meta">支付宝扫一扫, 向我投食</p>
+      </div>
+    
+  </div>
+
+</div>
+
+<script>
+  (() => {
+    let button = document.querySelector('#reward-btn'),
+      qrcode = document.querySelector('#reward-qrcode'),
+      display = false;
+    
+    button.addEventListener('click', () => {
+      qrcode.style.display = display ? 'none' : 'block'
+      display = !display
+    }, false)
   })()
 </script>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <blockquote>
-<p>在CentOS下安装Node.js</p>
-</blockquote>
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
           
-            <i class="iconfont icon-tag"></i>分类:
-            <a href="/categories/运维/">
-              运维
+          <span class="span--tag">
+            <a href="/tags/面试/">
+              #面试
             </a>
           </span>
           
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/CentOS/">
-                  #CentOS
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/Linux/">
-                  #Linux
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/Node-js/">
-                  #Node.js
-                </a>
-              </span>
-            
-                    
-        </span>
-      </div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="CentOS安装Node-js"></span>
-          </span>
-        </div>
-      
-    </div>
-  </div>
-  
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/passages/hello-world/">
-        <span>Hello World</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-02-12
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-02-12
-      </span>
-      
-        <span>
-        分类 :
-          <a href="/categories/随笔/">
-            随笔
-          </a>
-        </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="hello-world"></span>
-        </span>
-      
-    </div>
-    
-      <div id="hello-world" style="margin: 4rem 2px -1rem"></div>
-<script async>
-  (function(){
-    let playerTimer = setInterval(function(){
-      if(!window.APlayer){
-        return
-      }
-
-      new APlayer({
-        container: document.getElementById('hello-world'),
-        theme: '#e96900',
-        listFolded: false,
-        audio: [{"name":"Where are you","artist":"AniFace","url":"//music.163.com/song/media/outer/url?id=453843751.mp3","cover":"//p1.music.126.net/AUfXMljLBgB3PBV731IzRg==/109951162857118370.jpg?param=130y130"}]
-      });
-      
-      clearInterval(playerTimer)
-    }, 10);
-  })()
-</script>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <blockquote>
-<p>Hello World!<br>
-      </p></blockquote></div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-            <i class="iconfont icon-tag"></i>分类:
-            <a href="/categories/随笔/">
-              随笔
+          <span class="span--tag">
+            <a href="/tags/JavaScript/">
+              #JavaScript
             </a>
           </span>
           
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/记录/">
-                  #记录
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/生活/">
-                  #生活
-                </a>
-              </span>
-            
-                    
-        </span>
-      </div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="hello-world"></span>
-          </span>
-        </div>
-      
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
     </div>
   </div>
-  
+</div>
 
-  <nav class="page-navigation">
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/CentOS安装Node-js/" target="_self">CentOS安装Node.js</a>
+      </div>
     
     
   </nav>
+
+  
+    <a href="#comment" class="comment-anchor"></a>
+<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
+<div id="vcomments"></div>
+
+<script defer>
+  if( true ) {
+    let path = getRealPath()
+    new Valine({
+      el: "#vcomments",
+      appId: "5rET7Len3TOI5xeDUnOzqgMH-gzGzoHsz",
+      appKey: "pCNlWdMKbcM0Oo97P7qgRXhf",
+      notify: false,
+      verify: false,
+      avatar: "robohash",
+      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
+      path
+    });
+  }
+</script>
+   
 
   
     <script defer>
@@ -578,7 +461,7 @@ const valineAPI = (() => {
 })()
 
 const calcAndWriteTimes = () => {
-  let isPost = false;
+  let isPost = true;
 
   let timerAllDOM = document.querySelectorAll(".article-timer");
 
@@ -633,6 +516,7 @@ if(true){
 }
 </script>
    
+
 </div>
 
 
