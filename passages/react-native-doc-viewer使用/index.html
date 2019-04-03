@@ -8,12 +8,12 @@
   
   
   
-  <title>react-native-touch-id使用 | vector wings的小天地</title>
+  <title>react-native-doc-viewer使用 | vector wings的小天地</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="React Native,指纹识别,">
+    <meta name="keywords" content="React Native,文件预览,">
   
 
   <script>
@@ -205,12 +205,12 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>react-native-touch-id使用</span>
+    <span>react-native-doc-viewer使用</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-04-01
+      2019-04-03
     </span>
     
       <span>
@@ -222,13 +222,13 @@
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="react-native-touch-id使用"></span>
+        浏览 : <span class="article-timer" data-identity="react-native-doc-viewer使用"></span>
       </span>
     
   </div>
 
   
-    <div id="react-native-touch-id使用" style="margin: 4rem 2px"></div>
+    <div id="react-native-doc-viewer使用" style="margin: 4rem 2px"></div>
 <script async>
   (function(){
     let playerTimer = setInterval(function(){
@@ -237,10 +237,10 @@
       }
 
       new APlayer({
-        container: document.getElementById('react-native-touch-id使用'),
+        container: document.getElementById('react-native-doc-viewer使用'),
         theme: '#e96900',
         listFolded: false,
-        audio: [{"name":"绿色","artist":"陈雪凝","url":"//music.163.com/song/media/outer/url?id=1345848098.mp3","cover":"//p1.music.126.net/R4ZP3AJ9xV0vvw8LX7AbMA==/109951163860425334.jpg?param=130y130"}]
+        audio: [{"name":"你的酒馆对我打了烊","artist":"陈雪凝","url":"//music.163.com/song/media/outer/url?id=1341964346.mp3","cover":"//p1.music.126.net/LiRR__0pJHSivqBHZzbMUw==/109951163816225567.jpg?param=130y130"}]
       });
       
       clearInterval(playerTimer)
@@ -251,72 +251,226 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h1 id="react-native-touch-id-使用"><a href="#react-native-touch-id-使用" class="headerlink" title="react-native-touch-id 使用"></a>react-native-touch-id 使用</h1><h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><pre><code>yarn add react-native-touch-id
-</code></pre><h3 id="二、链接到工程"><a href="#二、链接到工程" class="headerlink" title="二、链接到工程"></a>二、链接到工程</h3><pre><code>react-native link react-native-touch-id
-</code></pre><h3 id="三、配置指纹传感器权限"><a href="#三、配置指纹传感器权限" class="headerlink" title="三、配置指纹传感器权限"></a>三、配置指纹传感器权限</h3><p>1）Android</p>
-<blockquote>
-<p>在 Project 浏览模式下，进入 app 下的 src 下的 main 文件夹，打开 AndroidManifest.xml 文件，在文件根节点下加入：</p>
+      <h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><pre><code>yarn add react-native-doc-viewer
+</code></pre><h3 id="二、链接到工程"><a href="#二、链接到工程" class="headerlink" title="二、链接到工程"></a>二、链接到工程</h3><pre><code>react-native link react-native-doc-viewer
+</code></pre><h3 id="三、配置"><a href="#三、配置" class="headerlink" title="三、配置"></a>三、配置</h3><blockquote>
+<p>iOS</p>
 </blockquote>
-<pre><code>&lt;uses-permission android:name=&quot;android.permission.USE_FINGERPRINT&quot; /&gt;
-</code></pre><p>2）iOS</p>
-<blockquote>
-<p>打开 iOS 工程中的 info.plist 文件，在文件根节点下加入：</p>
-</blockquote>
-<pre><code>Privacy - Face ID Usage Description
-</code></pre><h3 id="四、具体使用"><a href="#四、具体使用" class="headerlink" title="四、具体使用"></a>四、具体使用</h3><blockquote>
-<p>简单示例</p>
-</blockquote>
-<pre><code>import React from &quot;react&quot;;
-import { Alert } from &quot;react-native&quot;;
-import TouchID from &quot;react-native-touch-id&quot;;
-
-class YourComponent extends React.Component {
-    _pressHandler() {
-        const optionalConfigObject = {...};
-        TouchID.authenticate(&apos;auth demo&apos;, optionalConfigObject)
-        .then(success =&gt; {
-            Alert.alert(&apos;Authenticated Successfully&apos;);
-        })
-        .catch(error =&gt; {
-            Alert.alert(&apos;Authentication Failed&apos;);
-        });
-    },
-
-    render() {
-        return (
-            &lt;View onPress={() =&gt; {this._pressHandler()}}&gt;
-                &lt;Text&gt;
-                    Authenticate with Touch ID
-                &lt;/Text&gt;
-            &lt;/View&gt;
-        );
-    }
-}
+<pre><code>使用 react-native-link 后，在 Xcode 中打开项目，点击项目，
+在右侧 General 下的 Linked Frameworks and Libraries 中点击 &quot;+&quot; 号，
+加入 AssetsLibrary.framework 和 QuickLock.framework
 </code></pre><blockquote>
-<p>方法</p>
-<ul>
-<li>authenticate(reason, config)<br>方法描述：尝试使用Face ID/Touch ID进行身份验证。返回一个Promise对象。</li>
-<li>isSupported(config)<br>方法描述：返回一个 Promise 对象，如果不支持指纹识别，则不返回Promise 对象，在 iOS 平台，biometryType 返回为 String 类型的 FaceID 或者 TouchID。</li>
-</ul>
+<p>Android 无需配置</p>
+</blockquote>
+<h3 id="四、API-介绍"><a href="#四、API-介绍" class="headerlink" title="四、API 介绍"></a>四、API 介绍</h3><blockquote>
+<p>iOS</p>
+</blockquote>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><blockquote>
+<p>DoneButtonEvent: 使用 NativeEventEmitter 去监听完成事件</p>
 </blockquote>
 <blockquote>
-<p>参数</p>
+<p>RNDownloaderProgress: 使用 NativeEventEmitter 去监听下载进度</p>
+</blockquote>
+<hr>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><blockquote>
+<p>openDoc(files, callback)</p>
 <ul>
-<li>reason - String - 为请求身份验证提供一个清晰的缘由（可选）</li>
-<li>config - Object - 为对话框配置更详细的参数（可选）<ul>
-<li>title - String - 对话框确认标题（仅安卓适用）</li>
-<li>imageColor - String - 指纹图像颜色（仅安卓适用）</li>
-<li>imageErrorColor - String - 尝试失败后指纹图像颜色（仅安卓适用）</li>
-<li>sensorDescription - Strng - 显示在指纹图像旁边的文字（仅安卓适用）</li>
-<li>sensorErrorDescription - String - 尝试失败后显示在指纹图像旁边的文本（仅安卓适用）</li>
-<li>cancelText - String - 取消按钮文本（仅安卓适用）</li>
-<li>fallbackLabel - String - 默认情况下指定“显示密码”标签，如果设置为空字符串标签是不可见的（仅 iOS 适用）</li>
-<li>unifiedErrors - Boolean - 是否返回统一错误信息（默认为 false）</li>
-<li>passcodeFallback - Boolean - 是否允许适用键盘密码（默认为 false）</li>
+<li>files: - Array - 文件列表<ul>
+<li>url: - String - 文件地址（本地或服务器）</li>
+<li>fileNameOptional： - String - 可选文件名</li>
+</ul>
+</li>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
 </ul>
 </li>
 </ul>
 </blockquote>
+<blockquote>
+<p>openDocb64</p>
+<ul>
+<li>files: - Array - 文件列表<ul>
+<li>url: - String - 文件地址（本地或服务器）</li>
+<li>fileName: - String - 文件名</li>
+<li>fileType: - String - 文件类型<ul>
+<li>pdf, png, jpg, xls, doc, ppt, xlsx, docx, pptx etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>openDocBinaryinUrl</p>
+<ul>
+<li>files: - Array - 文件列表<ul>
+<li>url: - String - 文件地址（本地或服务器）</li>
+<li>fileName: - String - 文件名</li>
+<li>fileType: - String - 文件类型<ul>
+<li>pdf, png, jpg, xls, doc, ppt, xlsx, docx, pptx etc. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>playMovie</p>
+<ul>
+<li>path:  - String - 路径</li>
+</ul>
+<ul>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p>Android</p>
+</blockquote>
+<h4 id="事件（暂无）"><a href="#事件（暂无）" class="headerlink" title="事件（暂无）"></a>事件（暂无）</h4><h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><blockquote>
+<p>openDoc(files, callback)</p>
+<ul>
+<li>files: - Array - 文件列表<ul>
+<li>url: - String - 文件地址（本地或服务器）</li>
+<li>fileName: - String - 文件名</li>
+<li>cache: - Boolean - 是否缓存 </li>
+</ul>
+</li>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>openDocb64</p>
+<ul>
+<li>files: - Array - 文件列表<ul>
+<li>url: - String - 文件地址（本地或服务器</li>
+<li>fileName: - String - 文件名</li>
+<li>fileType: - String - 文件类型<ul>
+<li>pdf, png, jpg, xls, doc, ppt, xlsx, docx, pptx etc.</li>
+</ul>
+</li>
+<li>cache: - Boolean - 是否缓存</li>
+</ul>
+</li>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>openDocBinaryinUrl（暂未实现）</p>
+</blockquote>
+<blockquote>
+<p>playMovie</p>
+<ul>
+<li>path:  - String - 路径</li>
+<li>callback: - Function - 回调方法<ul>
+<li>error: - String - 错误信息</li>
+<li>url: - String - 文件地址（本地或服务器）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="五、示例"><a href="#五、示例" class="headerlink" title="五、示例"></a>五、示例</h3><p><code></code></p>
+<pre><code>import React, { Component } from &quot;react&quot;;
+import {
+    View,
+    Text,
+    StyleSheet,
+    NativeModules,
+    NativeEventEmitter,
+    Button,
+    Platform,
+} from &quot;react-native&quot;;
+import { connect } from &quot;react-redux&quot;;
+import OpenFile from &quot;react-native-doc-viewer&quot;;
+import { ActivityIndicator } from &quot;@ant-design/react-native&quot;;
+
+export default class DocViewer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            animating: false,
+            progress: &quot;0%&quot;,
+            donebuttonclicked: false,
+        }
+        this.eventEmitter = new NativeEventEmitter(NativeModules.RNReactNativeDocViewer);
+        this.eventEmitter.addListener(&apos;DoneButtonEvent&apos;, (data) =&gt; {
+            /*
+            * Done Button Clicked
+            * return true
+            */
+            this.setState({ donebuttonclicked: data.close, progress: &quot;0%&quot; });
+        });
+    }
+
+    componentDidMount() {
+        // download progress
+        this.eventEmitter.addListener(&apos;RNDownloaderProgress&apos;, (event) =&gt; {
+            this.setState({ progress: Math.round(event.progress) + &quot; %&quot; });
+        });
+    }
+
+    componentWillUnmount() {
+        this.eventEmitter.removeListener();
+    }
+
+    // 查看在线文件
+    handleOnlineDocPress = () =&gt; {
+        this.setState({ animating: true });
+
+        OpenFile.openDoc([{
+            url: &quot;https://calibre-ebook.com/downloads/demos/demo.docx&quot;,
+            fileNameOptional: &quot;测试文件&quot;,
+        }], (err, url) =&gt; {
+            this.setState({ animating: false });
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(url);
+            }
+        });
+    }
+
+    render() {
+        return (
+            &lt;View&gt;
+                &lt;Button
+                    onPress={this.handleOnlineDocPress}
+                    title={&quot;查看在线文档&quot;}
+                    color={&quot;lightgreen&quot;}
+                /&gt;
+                &lt;ActivityIndicator
+                    animating={this.state.animating}
+                    size={&quot;small&quot;}
+                    text={this.state.progress}
+                /&gt;
+            &lt;/View&gt;
+        )
+    }
+}
+</code></pre><p></p>
 
     </div>
   </div>
@@ -328,7 +482,7 @@ class YourComponent extends React.Component {
         
           本文作者 : vector wings <br>
         
-        原文链接 : <a href="">http://vectorwings.top/passages/react-native-touch-id使用/</a><br>
+        原文链接 : <a href="">http://vectorwings.top/passages/react-native-doc-viewer使用/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -388,8 +542,8 @@ class YourComponent extends React.Component {
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/指纹识别/">
-              #指纹识别
+            <a href="/tags/文件预览/">
+              #文件预览
             </a>
           </span>
           
@@ -414,15 +568,9 @@ class YourComponent extends React.Component {
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/C语言学习笔记/" target="_self">C语言学习笔记</a>
+        <a href="/passages/react-native-touch-id使用/" target="_self">react-native-touch-id使用</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/react-native-doc-viewer使用/" target="_self">react-native-doc-viewer使用</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 
